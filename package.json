@@ -3,7 +3,7 @@
     "cypress": "^8.2.0"
   },
   "name": "priyankamanchikatla",
-  "description": "",
+  "description": "Cypress automation",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
@@ -173,7 +173,7 @@
     "type": "git",
     "url": "git+https://github.com/priyankamanchikatla426/priyankamanchikatla.git"
   },
-  "author": "",
+  "author": "priyankamanchikatla426",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/priyankamanchikatla426/priyankamanchikatla/issues"
