@@ -5,8 +5,7 @@ describe('visit medical url', () => {
     cy.visit('https://www.medicines.org.uk/emc/browse-companies');
   })
 
-  it('Accept cookies', () => {
-
+  it('01 - Accept cookies', () => {
     cy.get('#onetrust-accept-btn-handler').should('contain', 'Accept All Cookies').click();
   })
 })
