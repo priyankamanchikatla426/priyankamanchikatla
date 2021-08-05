@@ -9,3 +9,15 @@ describe('visit medical url', () => {
     cy.get('#onetrust-accept-btn-handler').should('contain', 'Accept All Cookies').click();
   })
 })
+
+it('02 - Accept cookies', () => {
+  cy.get('li').each((item) => {
+    const title = item.find('h1').first().text();
+    const link = item.find('a').first();
+
+    cy.visit(link.attr('href'));
+
+    cy.get('h1').should('have.text', title);
+    cy.go('back');
+  });
+})
