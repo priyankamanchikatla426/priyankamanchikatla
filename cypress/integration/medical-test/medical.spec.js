@@ -1,23 +1,29 @@
 /// <reference types="cypress" />
 
+const { get } = require("cypress/types/lodash");
+
 describe('visit medical url', () => {
   beforeEach(() => {
     cy.visit('https://www.medicines.org.uk/emc/browse-companies');
   })
 
-  it('01 - Accept cookies', () => {
-    cy.get('#onetrust-accept-btn-handler').should('contain', 'Accept All Cookies').click();
-  })
-})
+  it('02- get companies details', () => {
 
-it('02 - Accept cookies', () => {
-  cy.get('li').each((item) => {
-    const title = item.find('h1').first().text();
-    const link = item.find('a').first();
+    const companiesList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Z"];
 
-    cy.visit(link.attr('href'));
+    pages.forEach(companiesList => {
 
-    cy.get('h1').should('have.text', title);
-    cy.go('back');
+      cy
+        .contains(companiesList)
+        .then((link) => {
+          cy.click(link.prop('href'))
+        })
+
+    })
+
   });
-})
+
+
+  })
+
+
