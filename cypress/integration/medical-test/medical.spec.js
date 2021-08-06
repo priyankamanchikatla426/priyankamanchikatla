@@ -12,7 +12,7 @@ describe('visit medical url', () => {
 
      const companiesList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Z"];
   for (let i = 0; i <= array.length[companiesList]; i += 1){
-    cy.get('a[href*="/emc/browse-companies/B"]').click();
+    cy.get('a[href*="/emc/browse-companies/companiesList"]').click();
     // cy.get('key').then($elements => {cy.wrap($elements[0]).click();});
 
   }
