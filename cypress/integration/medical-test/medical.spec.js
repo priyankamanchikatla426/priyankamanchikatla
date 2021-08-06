@@ -9,13 +9,12 @@ describe('visit medical url', () => {
   })
 
   it('02- get companies details', () => {
+    //  const companiesList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Z"];
 
-     const companiesList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Z"];
-
-    cy.get('a[href*="/emc/browse-companies/[companiesList]').click();
-    // cy.get('key').then($elements => {cy.wrap($elements[0]).click();});
-
-
+    cy.get('a[href*="/emc/browse-companies/A').click();
+    cy.get('.:nth-child(2) > .col-md-12').children().click();
+    cy.go('back')
+    cy.get('.ieleft > ul > :nth-child(3) > .key').click();
   })
 
 })
