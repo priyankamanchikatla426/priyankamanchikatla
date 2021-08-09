@@ -12,15 +12,10 @@ describe('visit medical url', () => {
      console.log(companiesList[i]);
 
     cy.get(':nth-child(1) > .key').click({multiple: true});
-        }
+     }
+
+
+        })
 
       })
-      it('write in JSON data', () => {
-        cy.writeFile('medicine.json')
-
-           }
-
-         })
-
-  })
 
