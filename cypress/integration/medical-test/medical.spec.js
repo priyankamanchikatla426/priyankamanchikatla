@@ -10,16 +10,17 @@ describe('visit medical url', () => {
      const companiesList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Z"];
      for( var i=0;i<companiesList.length;i++){
      console.log(companiesList[i]);
-     cy.get('ul>li').each(($el, index, $list) => {
-      if ($el=== cy.get('.key').eq(1)) {
-        cy.wrap($el).click()
-      } else {
-        // do something else
-      }
-    })
 
-     }
+    cy.get(':nth-child(1) > .key').click({multiple: true});
+        }
 
-    })
+      })
+      it('write in JSON data', () => {
+        cy.writeFile('medicine.json')
+
+           }
+
+         })
+
   })
 
