@@ -1,21 +1,35 @@
 /// <reference types="cypress" />
 
+
+const CompanyConfigData = {baseUrl : "https://www.medicines.org.uk" , URL : "https://www.medicines.org.uk/emc/browse-companies"}
+
+
+
 describe('visit medical url', () => {
-  beforeEach(() => {
-    cy.visit('https://www.medicines.org.uk/emc/browse-companies');
-    cy.get('#onetrust-accept-btn-handler').click();
+
+function browserCompaniesandreturnitsJSON(){
+  const companyDataJson = [];
+  cy.get('.browse li a').then(($el) => {
+    cy.log($el)
+    for(var companyAlphabet of $el){
+      saveFirstThirdLastData(companyAlphabet ,companyDataJson)
+    }
+
   })
+  return companyDataJson
+}
 
-  it('02- get companies list', () => {
-     const companiesList = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","Z"];
-     for( var i=0;i<companiesList.length;i++){
-     console.log(companiesList[i]);
-     cy.get('.col-md-12').its('length');
-    cy.get(':nth-child(1) > .key').click({multiple: true});
-     }
+function saveFirstThirdLastData(First , Second){
+  const href = First.href.replace(CompanyConfigData.baseUrl , " ");
+  cy.log(href);
+cy.get('a[href="'+href+ '"]').click();
+  }
 
+  it('03- get companies list', () => {
+    cy.visit(CompanyConfigData.URL);
+    cy.get('#onetrust-accept-btn-handler').click();
+  const CompaniesDataJson = browserCompaniesandreturnitsJSON()
 
-        })
-
-      })
+  })
+})
 
