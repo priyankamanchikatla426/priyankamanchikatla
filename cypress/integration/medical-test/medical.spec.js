@@ -20,9 +20,9 @@ function browserCompaniesandreturnitsJSON(){
 }
 
 function saveFirstThirdLastData(First , Second){
-  const href = First.href.replace(CompanyConfigData.baseUrl , " ");
+  const href = First.href.replace(CompanyConfigData.baseUrl , "");
   cy.log(href);
-cy.get('a[href="'+href+ '"]').click();
+cy.get('a[href="' +href+ '"]').click();
   }
 
   it('03- get companies list', () => {
