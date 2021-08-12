@@ -2,4 +2,8 @@
     "cypress-cucumber-preprocessor": {
         "nonGlobalStepDefinitions": true
       }
+
+      "chromeWebSecurity": false;
+      "projectId": "dbgj4r";
+
 }
